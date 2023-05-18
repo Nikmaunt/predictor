@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/predicorya/static/css/main.3b9521f4.css",
+    "main.js": "/predicorya/static/js/main.6daefd96.js",
+    "static/js/787.b88fe9b2.chunk.js": "/predicorya/static/js/787.b88fe9b2.chunk.js",
+    "index.html": "/predicorya/index.html",
+    "main.3b9521f4.css.map": "/predicorya/static/css/main.3b9521f4.css.map",
+    "main.6daefd96.js.map": "/predicorya/static/js/main.6daefd96.js.map",
+    "787.b88fe9b2.chunk.js.map": "/predicorya/static/js/787.b88fe9b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b9521f4.css",
+    "static/js/main.6daefd96.js"
+  ]
+}
