@@ -16,6 +16,7 @@ function App() {
   const iconsMaxNumber = Object.keys(icons).length
   const getMessages = async () => {
     console.log(API_KEY)
+    console.log('test')
     setMessage(null )
     const options = {
       method: "POST",
