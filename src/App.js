@@ -4,13 +4,9 @@ import * as icons from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 function App() {
-
-
     const [api, setApi] = useState("")
     const [icon, setIcon] = useState("");
     const [message, setMessage] = useState(null)
-    // const [trigger, setTrigger] = useState(false);
-    // const [rendered, setRendered] = useState(false);
     const Icon = icon ? icons[icon] : null;
     const iconsMaxNumber = Object.keys(icons).length
 
@@ -24,7 +20,7 @@ function App() {
             console.warn(error)
         }
     }
-    getApi()
+
     const getMessages = async () => {
         setMessage(null)
         const options = {
@@ -35,7 +31,7 @@ function App() {
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
-                messages: [{role: "user", content: 'describe like it is a picture ' + icon.slice(2, icon.length)}],
+                messages: [{role: "user", content: 'случайное предсказание астролога основываясь на картинке с именем' + icon.slice(2, icon.length)}],
                 max_tokens: 500,
             })
         }
@@ -57,11 +53,8 @@ function App() {
 
     useEffect(() => {
         getMessages()
+        getApi()
     }, [icon])
-
-
-
-
 
     return (
         <div className="App">
