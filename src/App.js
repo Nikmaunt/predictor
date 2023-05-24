@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import * as icons from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Circles} from "react-loader-spinner";
 
 function App() {
     const [api, setApi] = useState("")
+    const [loader, setLoader] = useState(false)
     const [icon, setIcon] = useState("");
     const [message, setMessage] = useState(null)
     const Icon = icon ? icons[icon] : null;
@@ -23,6 +25,7 @@ function App() {
 
     const getMessages = async () => {
         setMessage(null)
+        setLoader(true)
         const options = {
             method: "POST",
             headers: {
@@ -40,6 +43,7 @@ function App() {
                 'https://api.openai.com/v1/chat/completions', options)
             const data = await response.json()
             setMessage(data.choices[0].message)
+            setLoader(false)
         } catch (error) {
             console.warn(error)
         }
@@ -49,8 +53,6 @@ function App() {
         let rand = 0 - 0.5 + Math.random() * (iconsMaxNumber - 0 + 1);
         setIcon((Object.keys(icons)[Math.round(rand)]));
     }
-
-
     useEffect(() => {
         getMessages()
         getApi()
@@ -60,18 +62,27 @@ function App() {
         <div className="App">
             <button className="random-icon-button" onClick={() => {
                 randomInteger()
-            }}>Get random icon
+            }}>Discover your destiny
             </button>
+
             <div className="chat-container">
-                <p className="chat-message">{message?.content}</p>
-                <p className="chat-message">{icon.slice(2, icon.length)}</p>
+                <p className="chat-message">{message  ? message?.content :        <Circles
+                    height="80"
+                    width="80"
+                    color="#4fa94d"
+                    ariaLabel="circles-loading"
+                    wrapperStyle={{}}
+                    style={{display:"flex", alignItems:'center'}}
+                    wrapperClass="chat-message"
+                    visible={true}
+                />}</p>
             </div>
             {icon ? (
                 <div className='icon' onClick={() => getMessages()}>
                     <FontAwesomeIcon icon={Icon}/>
                 </div>
             ) : (
-                <span className='text'>Discover </span>
+                <span className='text'></span>
             )}
         </div>
     );
