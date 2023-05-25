@@ -43,6 +43,9 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^16.0.3"
+    "add": "^2.0.6",
+    "dotenv": "^16.0.3",
+    "react-loader-spinner": "^5.3.4",
+    "yarn": "^1.22.19"
   }
 }
