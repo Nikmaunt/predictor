@@ -10,6 +10,7 @@ import {getApi} from "../utils/getApi";
 function Predictor() {
     const [api, setApi] = useState("")
     const [icon, setIcon] = useState("");
+    const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null)
     const Icon = icon ? icons[icon] : null;
     const iconsMaxNumber = Object.keys(icons).length
@@ -19,7 +20,7 @@ function Predictor() {
         setIcon((Object.keys(icons)[Math.round(rand)]));
     }
     useEffect(() => {
-        getMessages(api,icon,setMessage)
+        getMessages(api,icon,setMessage,setLoading)
         getApi(setApi)
     }, [icon])
 
@@ -29,7 +30,7 @@ function Predictor() {
             }}>Discover your destiny
             </button>
             <div className="chat-container">
-                <p className="chat-message">{message   ? message?.content :
+                <p className="chat-message">{message && !loading ? message?.content :
                     <Circles
                         height="80"
                         width="80"

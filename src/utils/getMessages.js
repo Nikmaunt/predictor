@@ -1,4 +1,5 @@
-export const getMessages = async (api,icon,setMessage) => {
+export const getMessages = async (api,icon,setMessage, setLoading) => {
+    setLoading(true)
     const options = {
         method: "POST",
         headers: {
@@ -16,6 +17,7 @@ export const getMessages = async (api,icon,setMessage) => {
             'https://api.openai.com/v1/chat/completions', options)
         const data = await response.json()
         setMessage(data.choices[0].message)
+        setLoading(false)
     } catch (error) {
         console.warn(error)
     }
