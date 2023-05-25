@@ -8,7 +8,7 @@ export const getMessages = async (api,icon,setMessage, setLoading) => {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: 'astrologer\'s random prediction based on a picture with a name' + icon.slice(2, icon.length)}],
+            messages: [{role: "user", content: 'astrologer\'s random prediction based on a picture with a name'  + icon.slice(2, icon.length)}],
             max_tokens: 500,
         })
     }
