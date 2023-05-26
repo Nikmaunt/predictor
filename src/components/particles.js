@@ -80,7 +80,7 @@ const Particle = () => {
                 consent: false,
                 distance: 30,
                 enable: true,
-                opacity: 0.1,
+                opacity: 0.3,
                 width: 1
             },
             move: {
