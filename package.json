@@ -13,7 +13,9 @@
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-particles": "^2.9.3",
     "react-scripts": "5.0.1",
+    "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -46,6 +48,7 @@
     "add": "^2.0.6",
     "dotenv": "^16.0.3",
     "react-loader-spinner": "^5.3.4",
+    "tsparticles-plugin-polygon-mask": "^2.9.3",
     "yarn": "^1.22.19"
   }
 }

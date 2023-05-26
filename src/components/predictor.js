@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Circles} from "react-loader-spinner";
 import {getMessages} from "../utils/getMessages";
 import {getApi} from "../utils/getApi";
+import Particle from "./particles";
 
 
 function Predictor() {
@@ -26,6 +27,7 @@ function Predictor() {
 
     return (
         <div className="Predictor">
+
             <button className="random-icon-button" onClick={() => {randomInteger()
             }}>Discover your destiny
             </button>
@@ -49,6 +51,7 @@ function Predictor() {
             ) : (
                 <span className='text'>Default text</span>
             )}
+            <Particle/>
         </div>
     );
 }
