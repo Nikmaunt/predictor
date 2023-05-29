@@ -3,13 +3,14 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { loadPolygonMaskPlugin } from "tsparticles-plugin-polygon-mask";
 import { useCallback } from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Particle = () => {
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
         await loadPolygonMaskPlugin(engine);
     }, []);
-
+   const icon = <FontAwesomeIcon icon="fa-solid fa-shuffle" />
     const options = {
         name: "Polygon Mask",
         interactivity: {

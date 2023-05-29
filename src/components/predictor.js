@@ -49,7 +49,7 @@ function Predictor() {
                     <FontAwesomeIcon icon={Icon}/>
                 </div>
             ) : (
-                <span className='text'>Default text</span>
+                <span className='text'>Try it</span>
             )}
             <Particle/>
         </div>
